@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://23w1812i5mrm"]
+
+[ext_resource type="PackedScene" uid="uid://dhwhy5l4ptot0" path="res://scenes/flower.tscn" id="1_r7mlk"]
+[ext_resource type="Texture2D" uid="uid://bblera1h45k63" path="res://art/flower.png" id="2_xs2qn"]
+
+[node name="yellow_flower" instance=ExtResource("1_r7mlk")]
+powerUpType = "yellow-flower"
+
+[node name="Sprite2D" parent="." index="0"]
+self_modulate = Color(1, 1, 0, 1)
+texture = ExtResource("2_xs2qn")

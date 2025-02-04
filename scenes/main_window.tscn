@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3 uid="uid://c5x8em3nmin1o"]
+
+[ext_resource type="Script" path="res://scripts/grid.gd" id="1_bxitr"]
+[ext_resource type="AudioStream" uid="uid://da3remxcslimo" path="res://audio/plop.wav" id="2_etfsv"]
+
+[sub_resource type="SystemFont" id="SystemFont_oa4cr"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_c5hti"]
+font = SubResource("SystemFont_oa4cr")
+font_size = 120
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3qob5"]
+font_size = 32
+font_color = Color(0, 1, 1, 1)
+
+[sub_resource type="Curve" id="Curve_dm4id"]
+_data = [Vector2(0.244444, 0.527161), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="CurveTexture" id="CurveTexture_6o2a0"]
+curve = SubResource("Curve_dm4id")
+
+[node name="main_window" type="Node2D"]
+
+[node name="moves" type="Label" parent="."]
+z_index = 1
+offset_left = -1.0
+offset_top = 2.0
+offset_right = 575.0
+offset_bottom = 167.0
+text = "0"
+label_settings = SubResource("LabelSettings_c5hti")
+horizontal_alignment = 1
+
+[node name="scoreboard" type="Label" parent="."]
+z_index = 1
+offset_left = 211.0
+offset_top = 911.0
+offset_right = 332.0
+offset_bottom = 956.0
+text = "Score: 0"
+label_settings = SubResource("LabelSettings_3qob5")
+
+[node name="background" type="TextureRect" parent="."]
+offset_right = 576.0
+offset_bottom = 1024.0
+texture = SubResource("CurveTexture_6o2a0")
+metadata/_edit_lock_ = true
+
+[node name="grid" type="Node2D" parent="."]
+script = ExtResource("1_bxitr")
+width = 8
+height = 10
+x_start = 58
+y_start = 800
+offset = 65
+
+[node name="plop-sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_etfsv")
+volume_db = -10.0

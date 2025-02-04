@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfbum4pej766q"]
+
+[ext_resource type="PackedScene" uid="uid://cg2ks25omnit2" path="res://scenes/Block.tscn" id="1_ijovi"]
+[ext_resource type="Texture2D" uid="uid://nml1q1r41v36" path="res://icon.svg" id="2_3igi0"]
+
+[node name="purple_block" instance=ExtResource("1_ijovi")]
+color = "purple"
+
+[node name="Sprite2D" parent="." index="0"]
+self_modulate = Color(1, 0, 1, 1)
+texture = ExtResource("2_3igi0")
